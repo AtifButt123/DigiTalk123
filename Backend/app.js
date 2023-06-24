@@ -10,17 +10,16 @@ import dotenv from "dotenv";
 import bodyParser from "body-parser";
 
 dotenv.config();
-mongoose.set("strictQuery", true);
+// mongoose.set("strictQuery", true);
 
-const connect = async () => {
-  try {
-    await mongoose.connect(process.env.MONGO_URL);
 
-    console.log("MongoDB Database Connected");
-  } catch (err) {
-    console.log("MongoDB Database Connection Failed");
-  }
-};
+mongoose.connect(process.env.CONN_STRING,{
+    useUnifiedTopology:true,
+    useNewUrlParser:true
+}).then(()=> console.log("Database Connected")).catch((err)=>{
+    console.log(err);
+})
+
 
 // const ejs = require("ejs");
 // const jwt = require('jsonwebtoken');
@@ -49,6 +48,5 @@ app.use(cookieParser());
 
 
 app.listen(port, function () {
-  connect();
   console.log("Server started on port 3000");
 });
