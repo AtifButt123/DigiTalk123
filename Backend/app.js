@@ -32,7 +32,7 @@ const corsOptions = {
 };
 
 app.get("/",(req,res)=>{
-    res.redirect("/api/v1/auth/login")
+    res.send("This is default root")
 });
 
 app.use(express.json());
