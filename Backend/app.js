@@ -46,10 +46,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(cors());
 
-app.use("/api/v1/auth", authRoute);
-app.use("/api/v1/users", userRoute);
-app.use("/api/v1/posts", postRoute);
-app.use("/api/v1/universities", universityRoute);
+// app.use("/api/v1/auth", authRoute);
+// app.use("/api/v1/users", userRoute);
+// app.use("/api/v1/posts", postRoute);
+// app.use("/api/v1/universities", universityRoute);
+
+
+app.use("/auth", authRoute);
+app.use("/users", userRoute);
+app.use("/posts", postRoute);
+app.use("/universities", universityRoute);
 
 // for cookies
 app.use(cookieParser());
