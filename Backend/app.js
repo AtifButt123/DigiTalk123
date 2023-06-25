@@ -31,11 +31,18 @@ const corsOptions = {
   credentials: true,
 };
 
+<<<<<<< HEAD
 app.get("/", (req, res) => {
   res.send("This is the default route");
 });
 
 
+=======
+app.get("/",(req,res)=>{
+    res.send("This is default root")
+});
+
+>>>>>>> e6e04a510837419bc601eaded4b006b7a4da12e5
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
