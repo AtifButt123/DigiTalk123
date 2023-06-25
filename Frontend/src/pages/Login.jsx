@@ -76,7 +76,7 @@ const login = () => {
             <input type="password" name="password" id="inputPassword" 
             onChange={handleChange} className="form-control bottom" value={credentials.password} placeholder="password" required/>
             <button className="btn btn-lg btn-primary btn-block my-4" id="inputDob">Login!</button>
-            <a href="/register">Don't have an Account?</a>
+            <Link to="/register">Don't have an Account?</Link>
         </form>
     </div>
   )

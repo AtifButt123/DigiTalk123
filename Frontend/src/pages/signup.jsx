@@ -35,27 +35,27 @@ const Signup = () => {
           },
           body: JSON.stringify(credentials),
         });
-      
+
         const result = await res.json();
         if (result.status === "OK") {
           console.log("Inside ok");
           const URL = result.redirectUrl;
           console.log(URL);
-      
+
           localStorage.setItem("email", credentials.email);
-      
+
           // Save the cookie in the browser
           const userId = res.headers.get("Set-Cookie");
           document.cookie = userId;
-      
+
           navigate(URL);
         }
-      
+
         if (!res.ok) alert(result.message);
       } catch (err) {
         alert(err.message);
       }
-      
+
     } else {
       alert("University not enrolled");
       setCredentials({
@@ -125,8 +125,8 @@ const Signup = () => {
           required
         />
         <button className="btn btn-lg btn-primary btn-block">Register!</button>
-        <Link to="/login">Already have an Account? Login Here!</Link>
       </form>
+      <Link to="/login">Already have an Account? Login Here!</Link>
     </div>
   );
 };

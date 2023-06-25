@@ -17,7 +17,6 @@ function App() {
     <>
      <Background/>
       <div>
-     
         {
           connectedAccounts && user ? <Navbar /> : <></>
         }
