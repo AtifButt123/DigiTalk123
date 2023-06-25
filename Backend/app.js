@@ -32,7 +32,7 @@ const corsOptions = {
 };
 
 app.get("/",(req,res)=>{
-    res.redirect("/api/v1/auth")
+    res.redirect("/api/v1/auth/login")
 });
 
 app.use(express.json());
