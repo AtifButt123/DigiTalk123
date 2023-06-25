@@ -27,46 +27,46 @@ const login = () => {
     // console.log(credentials)
     // console.log(JSON.stringify(credentials))
 
+    console.log(`${BASE_URL}/auth/login`)
+    // try {
+    //   const res = await fetch(`${BASE_URL}/auth/login`, {
+    //     method: "post",
+    //     headers: {
+    //       "content-type": "application/json",
+    //     },
+    //     body: JSON.stringify(credentials),
+    //   });
 
-    try {
-      const res = await fetch(`${BASE_URL}/auth/login`, {
-        method: "post",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(credentials),
-      });
+    //   const result = await res.json();
+    //   if(result)
+    //   {
+    //     console.log(result)
+    //   }
+    //   if (!res.ok) alert(result.message);
+    //   console.log(result.data);
 
-      const result = await res.json();
-      if(result)
-      {
-        console.log(result)
-      }
-      if (!res.ok) alert(result.message);
-      console.log(result.data);
+    //   if(res.ok)
+    //   {
 
-      if(res.ok)
-      {
-
-        localStorage.setItem("user",JSON.stringify(result.user))
+    //     localStorage.setItem("user",JSON.stringify(result.user))
         
-        if(connectedAccounts)
-        {
-          // const Id=JSON.parse(localStorage.getItem("user")).id;
-          console.log("Response we get:",result.user.id)
-          console.log("Inside Update after login------------- ")
-          updateuser(connectedAccounts,result.user.id)
-          localStorage.setItem("key",connectedAccounts);
-        }
-        navigate("/");
-      }
-    } catch (err) {
-      console.log(err)
-    }
+    //     if(connectedAccounts)
+    //     {
+    //       // const Id=JSON.parse(localStorage.getItem("user")).id;
+    //       console.log("Response we get:",result.user.id)
+    //       console.log("Inside Update after login------------- ")
+    //       updateuser(connectedAccounts,result.user.id)
+    //       localStorage.setItem("key",connectedAccounts);
+    //     }
+    //     navigate("/");
+    //   }
+    // } catch (err) {
+    //   console.log(err)
+    // }
   };
   return (
     <div>
-        <form className="form form-login" id="form-login">
+        <form className="form form-login" id="form-login"  onSubmit={handleClick}>
             <img className="mb-4" src={logo} alt="" width="250" height="100"/>
             <h1 className="h3 mb-3 font-weight-normal text-white">Login to DigiTalk!</h1>
 
@@ -75,7 +75,7 @@ const login = () => {
 
             <input type="password" name="password" id="inputPassword" 
             onChange={handleChange} className="form-control bottom" value={credentials.password} placeholder="password" required/>
-            <button className="btn btn-lg btn-primary btn-block my-4" id="inputDob" onClick={()=>handleClick()}>Login!</button>
+            <button className="btn btn-lg btn-primary btn-block my-4" id="inputDob">Login!</button>
             <Link to="/register">Don't have an Account?</Link>
         </form>
     </div>
