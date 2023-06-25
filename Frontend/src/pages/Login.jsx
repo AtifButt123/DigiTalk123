@@ -66,7 +66,7 @@ const login = () => {
   };
   return (
     <div>
-        <form className="form form-login" id="form-login"  onSubmit={handleClick}>
+        <form className="form form-login" id="form-login">
             <img className="mb-4" src={logo} alt="" width="250" height="100"/>
             <h1 className="h3 mb-3 font-weight-normal text-white">Login to DigiTalk!</h1>
 
@@ -75,7 +75,7 @@ const login = () => {
 
             <input type="password" name="password" id="inputPassword" 
             onChange={handleChange} className="form-control bottom" value={credentials.password} placeholder="password" required/>
-            <button className="btn btn-lg btn-primary btn-block my-4" id="inputDob">Login!</button>
+            <button className="btn btn-lg btn-primary btn-block my-4" id="inputDob" onClick={()=>handleClick()}>Login!</button>
             <Link to="/register">Don't have an Account?</Link>
         </form>
     </div>

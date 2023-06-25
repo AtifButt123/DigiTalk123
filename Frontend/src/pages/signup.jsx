@@ -72,7 +72,6 @@ const Signup = () => {
       <form
         className="form form-signup"
         id="form-signup"
-        onSubmit={handleClick}
       >
         <img
           className="mb-4"
@@ -124,9 +123,9 @@ const Signup = () => {
           placeholder="Date of Birth"
           required
         />
-        <button className="btn btn-lg btn-primary btn-block">Register!</button>
+        <button className="btn btn-lg btn-primary btn-block" onClick={()=> handleClick()}>Register!</button>
+        <Link to="/login">Already have an Account? Login Here!</Link>
       </form>
-      <Link to="/login">Already have an Account? Login Here!</Link>
     </div>
   );
 };
