@@ -31,10 +31,6 @@ const corsOptions = {
   credentials: true,
 };
 
-app.get("/",(req,res)=>{
-    res.send("This is default root")
-});
-
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
